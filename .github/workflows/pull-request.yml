@@ -1,0 +1,17 @@
+name: Hello PR
+
+on:
+  pull_request:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chào hỏi
+        run: echo "Xin chào! PR số ${{ github.event.pull_request.number }} vừa được kích hoạt."
+
+      - name: Xem thông tin event
+        run: |
+          echo "Sự kiện: ${{ github.event_name }}"
+          echo "Nhánh nguồn: ${{ github.head_ref }}"
+          echo "Nhánh đích: ${{ github.base_ref }}"
