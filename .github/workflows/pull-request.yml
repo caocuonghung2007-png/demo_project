@@ -2,9 +2,7 @@ name: Hello PR
 
 on:
   pull_request:
-    types: [labeled]
-    paths:
-      - '**.js'
+    types: [closed]
 
 jobs:
   hello:
