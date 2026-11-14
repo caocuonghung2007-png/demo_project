@@ -1,0 +1,17 @@
+name: Push demo
+on:
+  push:
+    branches: [main, 'feature/**']
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  show:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Ref: $REF"
+          echo "SHA: $SHA"
+        env:
+          REF: ${{ github.ref }}
+          SHA: ${{ github.sha }}
